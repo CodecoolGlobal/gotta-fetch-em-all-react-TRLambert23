@@ -18,6 +18,11 @@ fetchData()
 
   return (
     <>
+    <div>
+    {
+     locations.results.map(result =>
+     result.name)}
+    </div>
      
     </>
   )
