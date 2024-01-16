@@ -7,17 +7,23 @@
 
 ol {
   list-style-type: decimal;
-  padding: 10px;
-  margin: 20px 0;
+  padding: 45px;
+  margin: 0px 0;
   border: 2px solid #333;
   border-radius: 5px;
   box-sizing: border-box; /* Make sure padding and border are included in the width */
   width: 100%; /* Adjust this as needed */
   max-width: 400px; /* Adjust this as needed */
+  position: absolute;
+  top: 16%;
+  left: 40%;
 }
 
 li {
-  font-size: 10px;
+  color: #524141;
+  font-size: 16px;
+  font-weight: bold;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
   margin-bottom: 10px;
   padding-left: 20px;
   background-color: #f4f4f4;
@@ -28,43 +34,22 @@ li {
 }
 
 li:hover {
-  background-color: #ddd;
+  background-color: #8b8b8b;
 }
 
 
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+h1 {
+  color: #524141;
+  background-color: #917474;
+  padding: 1px solid;
+  margin: 0; 
+  font-size: 30px;
+  font-weight: bold;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  position: absolute;
+  top: 0%;
+  left: -0.1%;
+  width: 100%;
+  height: 15%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
