@@ -53,3 +53,7 @@ h1 {
   height: 15%;
 }
 
+#show-location{
+  position: absolute;
+  left: 75%;
+}
