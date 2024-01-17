@@ -1,53 +1,44 @@
 import { useState, useEffect } from 'react';
+import EnemyPokemon from '../components/EnemyPokemon';
 
-function HandleLocation() {
-  const LocationUrl = 'https://pokeapi.co/api/v2/location';
+function HandleLocation({OnPick}) {
+  const locationUrl = 'https://pokeapi.co/api/v2/location';
   const [locations, setLocations] = useState(null);
-  const [selectedArenaUrl, setSelectedArenaUrl] = useState(null); // Add state for selected arena URL
+ 
+  const [showEnemy, setShowEnemy] = useState(false);
 
   useEffect(() => {
     async function fetchData() {
-      const response = await fetch(LocationUrl);
+      const response = await fetch(locationUrl);
       const data = await response.json();
-      setLocations(data);
+      setLocations(data.results);
     }
     fetchData();
   }, []);
 
-  const arenas = locations?.results;
-  const arenaNames = arenas?.map(arena => arena.name);
-  const arenaUrls = arenas?.map(arena => arena.url);
 
-  function handleLocationClick(index) {
-    setSelectedArenaUrl(arenaUrls[index]); // Update the selected URL in state
-  }
 
   return (
     <div>
-      <ol>
-        {arenaNames ? (
-          arenaNames.map((name, index) => (
+      {showEnemy ? ( /*<EnemyPokemon pokemon={handleLocationClick(locationUrl)}/>*/ 'ASD') : (<ol>
+        {locations ? (
+          locations.map((location) => (
             <li
-              id={name.slice(0, 2)}
-              key={index}
+              id={location.name.slice(0, 2)}
+              key={location.url}
               onClick={() => {
-                const randomArenaIndex = Math.round(Math.random() * Object.keys(arenaUrls).length)
-
-                handleLocationClick(randomArenaIndex)
-                
-                
-              }} // Pass the index to the click handler
+                // setShowEnemy(true)//Component
+                OnPick(location.url)
+              }} 
             >
-              {name}
+              {location.name}
             </li>
           ))
         ) : (
           <li>Loading...</li>
         )}
-      </ol>
-      {selectedArenaUrl && (
-        <p id="show-location">Selected Arena URL: {selectedArenaUrl}</p> // Display the selected URL if it's set
-      )}
+      </ol>)} 
+
     </div>
   );
 }
