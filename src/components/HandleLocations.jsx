@@ -20,7 +20,7 @@ function HandleLocation({OnPick}) {
 
   return (
     <div>
-      {showEnemy ? ( /*<EnemyPokemon pokemon={handleLocationClick(locationUrl)}/>*/ 'ASD') : (<ol>
+      {showEnemy ? (null) : (<ol>
         {locations ? (
           locations.map((location) => (
             <li
