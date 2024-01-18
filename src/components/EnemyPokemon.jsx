@@ -8,6 +8,7 @@ import SelectCharacter from "./SelectCaracter";
 function LoadEnemyPokemon({ url ,sendDataToApp}) {
   const [pokemon, setPokemon] = useState();
   const [selectButton, setSelectbutton] = useState(false);
+  const[isLocationEmpty, setIsLocationEmpty] = useState(false)
   const handleClick = () => {
     setSelectbutton(true);
     sendDataToApp(pokemon && pokemon)
