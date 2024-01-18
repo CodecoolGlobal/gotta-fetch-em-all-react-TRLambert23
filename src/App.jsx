@@ -4,6 +4,7 @@ import HandleLocations from "./components/HandleLocations";
 import Header from "./components/Header";
 import { useState } from "react";
 import SelectCharacter from "./components/SelectCharacter";
+import Fight from "./components/Fight"
 
 function App() {
   const [chosenLocation, setChosenLocation] = useState();
@@ -27,16 +28,19 @@ function App() {
       <h1>
         <Header />
       </h1>
-      {enemyPokemon ? (
-        <SelectCharacter sendDataToApp={handLeDataFromSelectC} />
-      ) : chosenLocation ? (
-        <LoadEnemyPokemon
-          url={chosenLocation}
-          sendDataToApp={handleDataFromEnemy}
-        />
-      ) : (
-        <HandleLocations OnPick={toggleLocation} />
+      {myPokemon?(<Fight enemy={enemyPokemon} userPokemon={myPokemon}/>):(
+        enemyPokemon ? (
+          <SelectCharacter sendDataToApp={handLeDataFromSelectC} />
+        ) : chosenLocation ? (
+          <LoadEnemyPokemon
+            url={chosenLocation}
+            sendDataToApp={handleDataFromEnemy}
+          />
+        ) : (
+          <HandleLocations OnPick={toggleLocation} />
+        )
       )}
+      
     </>
   );
 }
