@@ -19,11 +19,11 @@ function Fight({ enemy, userPokemon, onBackClicked }) {
 
   function handleFight() {
     if (userTurn) {
-      handleBattle(handleFormula(userA, userD, z), enemyHp); //user
+      handleBattle(handleFormula(userA, userD, z), enemyHp); 
       setUserTurn(false);
       enemyHp <= 0 || userHp <= 0 ? setFinished(true) : setFinished(false);
     } else {
-      handleBattle(handleFormula(enemyA, enemyD, z), userHp); //enemy
+      handleBattle(handleFormula(enemyA, enemyD, z), userHp); 
       setUserTurn(true);
       enemyHp <= 0 || userHp <= 0 ? setFinished(true) : setFinished(false);
     }
@@ -35,6 +35,7 @@ function Fight({ enemy, userPokemon, onBackClicked }) {
 
   const handleBackClick = () => {
     onBackClicked();
+    
   };
 
   function handleFormula(b, d, z) {
@@ -54,7 +55,7 @@ function Fight({ enemy, userPokemon, onBackClicked }) {
           <h2>You LOSE!</h2>
           <button onClick={handleBackClick}>Back to locations</button>
         </div>
-      ) : !finished ? (
+      ) : (
         <>
           <h2 id="enemy-fighter">{enemyPokemon.name}</h2>
           <h3 id="enemy-hp">HP: {Math.floor(enemyHp)}</h3>
@@ -72,7 +73,7 @@ function Fight({ enemy, userPokemon, onBackClicked }) {
           />
           <button onClick={handleFight}>Fight</button>
         </>
-      ) : null}
+      ) }
     </div>
   );
 }

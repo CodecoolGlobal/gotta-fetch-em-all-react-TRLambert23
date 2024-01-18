@@ -35,7 +35,9 @@ function App() {
           enemy={enemyPokemon}
           userPokemon={myPokemon}
           onBackClicked={() => {
-            setChosenLocation(null);
+            setMyPokemon(null);
+            setEnemyPokemon(null);
+            setChosenLocation(null)
           }}
         />
       ) : enemyPokemon ? (
