@@ -28,21 +28,23 @@ function App() {
       <h1>
         <Header title= {chosenLocation ? chosenLocation.name : 'Select your location' } />
       </h1>
-
-      {enemyPokemon ? (
-        <SelectCharacter sendDataToApp={handLeDataFromSelectC} />
-      ) : chosenLocation ? (
-        <LoadEnemyPokemon
-          url={chosenLocation.url}
-          sendDataToApp={handleDataFromEnemy}
-          onBackClicked={() => {
-            setChosenLocation(null)
-          }}
-        />
-      ) : (
-        <HandleLocations OnPick={toggleLocation} />
-
+      {myPokemon?(<Fight enemy={enemyPokemon} userPokemon={myPokemon}/>):(
+        enemyPokemon ? (
+          <SelectCharacter sendDataToApp={handLeDataFromSelectC} />
+        ) : chosenLocation ? (
+          <LoadEnemyPokemon
+            url={chosenLocation.url}
+            sendDataToApp={handleDataFromEnemy}
+            onBackClicked={() => {
+              setChosenLocation(null)
+            }}
+          />
+        ) : (
+          <HandleLocations OnPick={toggleLocation} />
+  
+        )
       )}
+      
       
     </>
   );

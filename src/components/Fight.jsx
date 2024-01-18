@@ -1,7 +1,7 @@
 function Fight({enemy, userPokemon}){
-const enemyPokemon =enemy;
+const enemyPokemon = enemy;
 const myPokemon = userPokemon;
-console.log(userPokemon)
+console.log(enemyPokemon)
 return(
     <div>Hello</div>
 )
