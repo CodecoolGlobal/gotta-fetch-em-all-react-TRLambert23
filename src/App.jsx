@@ -25,6 +25,7 @@ function App() {
 
   return (
     <>
+      <img id="poke-logo" src="https://i.ibb.co/4FgwXhB/pokebgless.png"/>
       <h1>
         <Header
           title={chosenLocation ? chosenLocation.name : "Select your location"}

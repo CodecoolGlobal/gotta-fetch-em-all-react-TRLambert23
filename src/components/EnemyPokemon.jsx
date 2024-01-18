@@ -59,7 +59,7 @@ function LoadEnemyPokemon({ url, sendDataToApp, onBackClicked }) {
         </div>
       ) : (
         <div>
-          <h3 id="enemy-pokemon-name">{pokemon && pokemon.name}</h3>
+          <h3 id="enemy-pokemon-name">Enemy pokemon: {pokemon && pokemon.name}</h3>
           <img
             id="enemy-pokemon-img"
             src={pokemon && pokemon.sprites["front_default"]}

@@ -69,6 +69,10 @@ function SelectCharacter({ sendDataToApp }) {
         <button id="select-btn3"onClick={() => handleClick(pokemon3)}>Select</button>
       </div>
       </div>
+      <img id="pkb1" src="https://www.freeiconspng.com/uploads/pokeball-transparent-png-2.png"/>
+      <img id="pkb2" src="https://www.freeiconspng.com/uploads/pokeball-transparent-png-2.png"/>
+      <img id="pkb3" src="https://www.freeiconspng.com/uploads/pokeball-transparent-png-2.png"/>
+      
     </>
   );
 }

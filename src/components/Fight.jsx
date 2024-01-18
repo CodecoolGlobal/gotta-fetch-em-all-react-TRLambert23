@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { useState } from "react";
 
 function Fight({ enemy, userPokemon, onBackClicked }) {
@@ -47,31 +48,45 @@ function Fight({ enemy, userPokemon, onBackClicked }) {
     <div>
       {finished && enemyHp <= 0 ? (
         <div>
-          <h2>You WIN!</h2>
-          <button onClick={handleBackClick}>Back to locations</button>
+          <h2 id="win-msg">YOU WON !</h2>
+          <img id="win-gif" src="https://c.tenor.com/7Nj-xYFfoi8AAAAd/tenor.gif"/>
+          <button id="back-btn" onClick={handleBackClick}>Back to location select</button>
         </div>
       ) : finished && userHp <= 0 ? (
         <div>
-          <h2>You LOSE!</h2>
-          <button onClick={handleBackClick}>Back to locations</button>
+          <h2 id="lose-msg">You LOST !</h2>
+          <img id="lose-gif" src="https://c.tenor.com/7C6H6TQk-D8AAAAC/tenor.gif"/>
+          <button id="back-btn" onClick={handleBackClick}>Back to location select</button>
         </div>
       ) : (
         <>
-          <h2 id="enemy-fighter">{enemyPokemon.name}</h2>
-          <h3 id="enemy-hp">HP: {Math.floor(enemyHp)}</h3>
-          <img
-            id="enemy-fighter-img"
-            src={enemyPokemon && enemyPokemon.sprites["front_default"]}
-            alt={enemyPokemon && enemyPokemon.name}
-          />
-          <h2 id="user-fighter">{myPokemon.name}</h2>
-          <h3 id="user-hp">HP: {Math.floor(userHp)}</h3>
-          <img
-            id="user-fighter-img"
-            src={myPokemon && myPokemon.sprites["front_default"]}
-            alt={myPokemon && myPokemon.name}
-          />
-          <button onClick={handleFight}>Fight</button>
+          <div id="display-enemy">
+            <h2 id="enemy-fighter-text">{enemyPokemon.name}</h2>
+            <h3 id="enemy-hp">
+              HP <br />
+              {Math.floor(enemyHp)}
+            </h3>
+
+            <img
+              id="enemy-fighter-img"
+              src={enemyPokemon && enemyPokemon.sprites["front_default"]}
+              alt={enemyPokemon && enemyPokemon.name}
+            />
+          </div>
+          <div id="display-user">
+            <h2 id="user-fighter-text">{myPokemon.name}</h2>
+            <h3 id="user-hp">
+              HP <br />
+              {Math.floor(userHp)}
+            </h3>
+            <img
+              id="user-fighter-img"
+              src={myPokemon && myPokemon.sprites["front_default"]}
+              alt={myPokemon && myPokemon.name}
+            />
+          </div>
+
+          <button id="fight-btn" onClick={handleFight}>Fight</button>
         </>
       ) }
     </div>
