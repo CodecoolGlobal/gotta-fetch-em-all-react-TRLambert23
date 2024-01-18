@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-function selectCaracter() {
+function selectCharacter() {
   const usersPokemon = [
     "https://pokeapi.co/api/v2/pokemon/bulbasaur",
     "https://pokeapi.co/api/v2/pokemon/charizard",
@@ -11,7 +11,7 @@ function selectCaracter() {
   const [pokemon2, setPokemon2] = useState(undefined);
   const [pokemon3, setPokemon3] = useState(undefined);
 
-  const [selectedCaracter, setSelectedCarater] = useState("");
+  const [selectedCharacter, setSelectedCharater] = useState("");
 
   useEffect(() => {
     async function fetchData(url) {
@@ -57,4 +57,4 @@ function selectCaracter() {
     </>
   );
 }
-export default selectCaracter;
+export default selectCharacter;

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import SelectCaracter from "../SelectCaracter";
+import SelectCharacter from "./SelectCharacter";
 function LoadEnemyPokemon ({url}) {
 
     const [pokemon, setPokemon] = useState()
@@ -8,7 +8,7 @@ function LoadEnemyPokemon ({url}) {
       setSelectbutton(true)
     }
     useEffect(() => {
-  async function displayPokemon() { //THIS
+  async function displayPokemon() {
     const data = await fetch(url);
     const currentLocation = await data.json()
     const randomAreaIndex = Math.floor(Math.random() * currentLocation.areas.length)
@@ -28,7 +28,7 @@ function LoadEnemyPokemon ({url}) {
     }, [])
 
     return (
-        <>{selectButton?(<SelectCaracter/>):(<div>
+        <>{selectButton?(<SelectCharacter/>):(<div>
           <h3 id="enemy-pokemon-name">{pokemon && pokemon.name}</h3>
           <img id="enemy-pokemon-img" src={pokemon && pokemon.sprites['front_default']}/>
           <button onClick={handleClick}>Select your pokemon</button>

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import EnemyPokemon from '../components/EnemyPokemon';
+import EnemyPokemon from './EnemyPokemon';
 
 function HandleLocation({OnPick}) {
   const locationUrl = 'https://pokeapi.co/api/v2/location';
@@ -27,7 +27,7 @@ function HandleLocation({OnPick}) {
               id={location.name.slice(0, 2)}
               key={location.url}
               onClick={() => {
-                // setShowEnemy(true)//Component
+                // setShowEnemy(true)
                 OnPick(location.url)
               }} 
             >
