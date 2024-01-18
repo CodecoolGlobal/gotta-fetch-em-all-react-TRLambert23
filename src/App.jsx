@@ -1,3 +1,4 @@
+
 import "./App.css";
 import LoadEnemyPokemon from "./components/EnemyPokemon";
 import HandleLocations from "./components/HandleLocations";
@@ -10,9 +11,11 @@ function App() {
   const [enemyPokemon, setEnemyPokemon] = useState();
   const [myPokemon, setMyPokemon] = useState();
 
+
   function toggleLocation(url) {
     setChosenLocation(url);
   }
+
   const handleDataFromEnemy = (data) => {
     setEnemyPokemon(data);
   };
@@ -23,6 +26,7 @@ function App() {
 
   console.log(myPokemon);
   return (
+
     <>
       <h1>
         <Header />
@@ -38,6 +42,7 @@ function App() {
         <HandleLocations OnPick={toggleLocation} />
       )}
     </>
+
   );
 }
 
