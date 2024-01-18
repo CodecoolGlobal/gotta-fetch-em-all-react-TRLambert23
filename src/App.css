@@ -18,7 +18,7 @@ ol {
   list-style-type: decimal;
   padding: 45px;
   margin: 0px 0;
-  border: 2px solid #333;
+  border: 3px ridge #333;
   border-radius: 5px;
   box-sizing: border-box; 
   width: 100%; 
@@ -26,8 +26,12 @@ ol {
   position: absolute;
   top: 17%;
   left: 40%;
-  background-color: #b99f27a4;
   border-radius: 10px;
+  background: linear-gradient(
+    to bottom, /* Gradient goes from top to bottom */
+    rgba(255, 255, 255, 0.5), /* White with 50% opacity */
+    rgba(0, 0, 0, 0.5) /* Black with 50% opacity */
+  );
 }
 
 li {
