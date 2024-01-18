@@ -1,16 +1,14 @@
-
 import "./App.css";
 import LoadEnemyPokemon from "./components/EnemyPokemon";
 import HandleLocations from "./components/HandleLocations";
 import Header from "./components/Header";
 import { useState } from "react";
-import SelectCaracter from "./components/SelectCaracter";
+import SelectCharacter from "./components/SelectCharacter";
 
 function App() {
   const [chosenLocation, setChosenLocation] = useState();
   const [enemyPokemon, setEnemyPokemon] = useState();
   const [myPokemon, setMyPokemon] = useState();
-
 
   function toggleLocation(url) {
     setChosenLocation(url);
@@ -21,18 +19,16 @@ function App() {
   };
 
   const handLeDataFromSelectC = (selectedData) => {
-    setMyPokemon(selectedData)
-  }
+    setMyPokemon(selectedData);
+  };
 
-  console.log(myPokemon);
   return (
-
     <>
       <h1>
         <Header />
       </h1>
       {enemyPokemon ? (
-        <SelectCaracter sendDataToApp = {handLeDataFromSelectC}/>
+        <SelectCharacter sendDataToApp={handLeDataFromSelectC} />
       ) : chosenLocation ? (
         <LoadEnemyPokemon
           url={chosenLocation}
@@ -42,7 +38,6 @@ function App() {
         <HandleLocations OnPick={toggleLocation} />
       )}
     </>
-
   );
 }
 

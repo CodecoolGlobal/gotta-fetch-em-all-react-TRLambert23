@@ -7,7 +7,7 @@ body {
 }
 
 #root {
-  max-width:max-content;
+  max-width: max-content;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
@@ -32,7 +32,7 @@ li {
   color: #524141;
   font-size: 16px;
   font-weight: bold;
-  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   margin-bottom: 10px;
   padding-left: 20px;
   background-color: #f4f4f4;
@@ -46,12 +46,11 @@ li:hover {
   background-color: #8b8b8b;
 }
 
-
 h1 {
   color: #524141;
   background-color: #95d3717c;
   padding: 1px solid;
-  margin: 0; 
+  margin: 0;
   font-size: 50px;
   font-weight: bold;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -62,16 +61,16 @@ h1 {
   height: 15%;
 }
 
-#show-location{
+#show-location {
   position: absolute;
   left: 75%;
 }
 
-#enemy-pokemon-name{
+#enemy-pokemon-name {
   position: absolute;
   top: 54%;
   left: 64%;
-  font-family: 'Pokemon Solid', sans-serif;
+  font-family: "Pokemon Solid", sans-serif;
   background-color: #bd4e6fa4;
   font-size: 30px;
   text-transform: uppercase;
@@ -81,7 +80,6 @@ h1 {
   padding-left: 1%;
   padding-right: 1%;
   padding-bottom: 1%;
-
 }
 
 #enemy-pokemon-img {
@@ -90,4 +88,24 @@ h1 {
   left: 57%;
   height: 500px;
   width: 500px;
+}
+#select-user-pokemon {
+  position: absolute;
+  left: 38%;
+  top: 37%;
+  font-size: 20px;
+  text-transform: uppercase;
+  border-radius: 10px;
+  letter-spacing: 10px;
+  padding: 0.5%;
+  padding-left: 1%;
+  padding-right: 1%;
+  padding-bottom: 1%;
+  font-family: "Pokemon Solid", sans-serif;
+  font-weight: bold;
+  background-color: #5a8a5db7;
+}
+
+#select-user-pokemon:hover {
+  background-color: #5cd063b7;
 }

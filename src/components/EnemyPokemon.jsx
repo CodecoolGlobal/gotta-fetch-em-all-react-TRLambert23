@@ -1,8 +1,6 @@
 
-  
 import { useEffect, useState } from "react";
-
-import SelectCharacter from "./SelectCaracter";
+import SelectCharacter from "./SelectCharacter";
 
 
 function LoadEnemyPokemon({ url ,sendDataToApp}) {
@@ -61,7 +59,7 @@ function LoadEnemyPokemon({ url ,sendDataToApp}) {
 
             alt={pokemon && pokemon.name}
           />
-          <button onClick={handleClick}>Select your pokemon</button>
+          <button id="select-user-pokemon" onClick={handleClick}>Select your pokemon</button>
         </div>
       )}
 
