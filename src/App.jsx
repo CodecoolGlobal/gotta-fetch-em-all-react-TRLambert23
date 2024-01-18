@@ -4,7 +4,7 @@ import HandleLocations from "./components/HandleLocations";
 import Header from "./components/Header";
 import { useState } from "react";
 import SelectCharacter from "./components/SelectCharacter";
-import Fight from "./components/Fight"
+import Fight from "./components/Fight";
 
 function App() {
   const [chosenLocation, setChosenLocation] = useState();
@@ -26,24 +26,31 @@ function App() {
   return (
     <>
       <h1>
-        <Header title= {chosenLocation ? chosenLocation.name : 'Select your location' } />
+        <Header
+          title={chosenLocation ? chosenLocation.name : "Select your location"}
+        />
       </h1>
-
-      {enemyPokemon ? (
+      {myPokemon ? (
+        <Fight
+          enemy={enemyPokemon}
+          userPokemon={myPokemon}
+          onBackClicked={() => {
+            setChosenLocation(null);
+          }}
+        />
+      ) : enemyPokemon ? (
         <SelectCharacter sendDataToApp={handLeDataFromSelectC} />
       ) : chosenLocation ? (
         <LoadEnemyPokemon
           url={chosenLocation.url}
           sendDataToApp={handleDataFromEnemy}
           onBackClicked={() => {
-            setChosenLocation(null)
+            setChosenLocation(null);
           }}
         />
       ) : (
         <HandleLocations OnPick={toggleLocation} />
-
       )}
-      
     </>
   );
 }

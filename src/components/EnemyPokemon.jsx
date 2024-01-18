@@ -1,22 +1,21 @@
-
 import { useEffect, useState } from "react";
 import SelectCharacter from "./SelectCharacter";
 import HandleLocation from "./HandleLocations";
 
-function LoadEnemyPokemon({ url ,sendDataToApp, onBackClicked}) {
+function LoadEnemyPokemon({ url, sendDataToApp, onBackClicked }) {
   const [pokemon, setPokemon] = useState();
   const [selectButton, setSelectbutton] = useState(false);
-  const[isLocationEmpty, setIsLocationEmpty] = useState(false)
-const [backClicked, setBackClicked] = useState(false)
+  const [isLocationEmpty, setIsLocationEmpty] = useState(false);
+  const [backClicked, setBackClicked] = useState(false);
 
   const handleClick = () => {
     setSelectbutton(true);
-    sendDataToApp(pokemon && pokemon)
-  }
+    sendDataToApp(pokemon && pokemon);
+  };
 
-  const handleBackClick = () =>{
-   onBackClicked()
-  }
+  const handleBackClick = () => {
+    onBackClicked();
+  };
 
   useEffect(() => {
     async function displayPokemon() {
@@ -49,13 +48,14 @@ const [backClicked, setBackClicked] = useState(false)
 
   return (
     <>
-    {backClicked?(<HandleLocation/>):(
-      selectButton ? (
+      {backClicked ? (
+        <HandleLocation />
+      ) : selectButton ? (
         <SelectCharacter />
       ) : isLocationEmpty ? (
         <div>
           <h2>This location does not seem to have any pokémon</h2>
-        <button onClick={handleBackClick}>Back</button>
+          <button onClick={handleBackClick}>Back</button>
         </div>
       ) : (
         <div>
@@ -63,15 +63,13 @@ const [backClicked, setBackClicked] = useState(false)
           <img
             id="enemy-pokemon-img"
             src={pokemon && pokemon.sprites["front_default"]}
-
             alt={pokemon && pokemon.name}
           />
-          <button id="select-user-pokemon" onClick={handleClick}>Select your pokemon</button>
+          <button id="select-user-pokemon" onClick={handleClick}>
+            Select your pokemon
+          </button>
         </div>
-      )
-    )}
-      
-
+      )}
     </>
   );
 }
