@@ -11,7 +11,7 @@ function HandleLocation({OnPick}) {
     async function fetchData() {
       const response = await fetch(locationUrl);
       const data = await response.json();
-      setLocations(data.results);
+      setLocations(data.results); 
     }
     fetchData();
   }, []);
@@ -27,7 +27,6 @@ function HandleLocation({OnPick}) {
               id={location.name.slice(0, 2)}
               key={location.url}
               onClick={() => {
-                // setShowEnemy(true)
                 OnPick(location.url)
               }} 
             >

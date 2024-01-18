@@ -27,7 +27,6 @@ function selectCharacter() {
     setPokemons();
   }, []);
 
-  console.log(pokemon1);
   return (
     <>
       <div>
