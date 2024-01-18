@@ -1,10 +1,13 @@
 import { useEffect, useState } from "react";
 import SelectCharacter from "./SelectCaracter";
-function LoadEnemyPokemon({ url }) {
+
+
+function LoadEnemyPokemon({ url ,sendDataToApp}) {
   const [pokemon, setPokemon] = useState();
   const [selectButton, setSelectbutton] = useState(false);
-  function handleClick() {
+  const handleClick = () => {
     setSelectbutton(true);
+    sendDataToApp(pokemon && pokemon)
   }
   useEffect(() => {
     async function displayPokemon() {
@@ -31,9 +34,7 @@ function LoadEnemyPokemon({ url }) {
 
   return (
     <>
-      {selectButton ? (
-        <SelectCharacter />
-      ) : (
+      
         <div>
           <h3 id="enemy-pokemon-name">{pokemon && pokemon.name}</h3>
           <img
@@ -42,7 +43,7 @@ function LoadEnemyPokemon({ url }) {
           />
           <button onClick={handleClick}>Select your pokemon</button>
         </div>
-      )}
+      
     </>
   );
 }
