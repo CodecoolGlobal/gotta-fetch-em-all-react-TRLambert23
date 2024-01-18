@@ -11,8 +11,8 @@ function App() {
   const [enemyPokemon, setEnemyPokemon] = useState();
   const [myPokemon, setMyPokemon] = useState();
 
-  function toggleLocation(url) {
-    setChosenLocation(url);
+  function toggleLocation(location) {
+    setChosenLocation(location);
   }
 
   const handleDataFromEnemy = (data) => {
@@ -26,19 +26,22 @@ function App() {
   return (
     <>
       <h1>
-        <Header />
+        <Header title= {chosenLocation ? chosenLocation.name : 'Select your location' } />
       </h1>
-      {myPokemon?(<Fight enemy={enemyPokemon} userPokemon={myPokemon}/>):(
-        enemyPokemon ? (
-          <SelectCharacter sendDataToApp={handLeDataFromSelectC} />
-        ) : chosenLocation ? (
-          <LoadEnemyPokemon
-            url={chosenLocation}
-            sendDataToApp={handleDataFromEnemy}
-          />
-        ) : (
-          <HandleLocations OnPick={toggleLocation} />
-        )
+
+      {enemyPokemon ? (
+        <SelectCharacter sendDataToApp={handLeDataFromSelectC} />
+      ) : chosenLocation ? (
+        <LoadEnemyPokemon
+          url={chosenLocation.url}
+          sendDataToApp={handleDataFromEnemy}
+          onBackClicked={() => {
+            setChosenLocation(null)
+          }}
+        />
+      ) : (
+        <HandleLocations OnPick={toggleLocation} />
+
       )}
       
     </>

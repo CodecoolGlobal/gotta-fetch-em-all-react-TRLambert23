@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import SelectCharacter from "./SelectCharacter";
 import HandleLocation from "./HandleLocations";
 
-function LoadEnemyPokemon({ url ,sendDataToApp}) {
+function LoadEnemyPokemon({ url ,sendDataToApp, onBackClicked}) {
   const [pokemon, setPokemon] = useState();
   const [selectButton, setSelectbutton] = useState(false);
   const[isLocationEmpty, setIsLocationEmpty] = useState(false)
@@ -15,7 +15,7 @@ const [backClicked, setBackClicked] = useState(false)
   }
 
   const handleBackClick = () =>{
-   setBackClicked(true)
+   onBackClicked()
   }
 
   useEffect(() => {
