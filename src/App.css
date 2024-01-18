@@ -20,11 +20,11 @@ ol {
   margin: 0px 0;
   border: 2px solid #333;
   border-radius: 5px;
-  box-sizing: border-box; /* Make sure padding and border are included in the width */
-  width: 100%; /* Adjust this as needed */
-  max-width: 400px; /* Adjust this as needed */
+  box-sizing: border-box; 
+  width: 100%; 
+  max-width: 400px; 
   position: absolute;
-  top: 16%;
+  top: 17%;
   left: 40%;
   background-color: #b99f27a4;
   border-radius: 10px;
@@ -39,29 +39,44 @@ li {
   padding-left: 20px;
   background-color: #f4f4f4;
   border-left: 4px solid #333;
-  transition: background-color 0.3s ease;
-  box-sizing: border-box; /* Include padding and border in the element's total width */
-  word-wrap: break-word; /* Break long words to prevent overflow */
+  transition: all 0.3s ease; 
+  box-sizing: border-box; 
+  word-wrap: break-word; 
 }
 
 li:hover {
-  background-color: #8b8b8b;
+  background-color: #8b8b8b; 
+  color: #f4f4f4; 
+  border-left: 4px solid #524141; 
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
 }
+
 
 h1 {
   color: #524141;
-  background-color: #95d3717c;
-  padding: 1px solid;
-  margin: 0;
+  background-image: url("https://images3.alphacoders.com/273/thumb-1920-273289.jpg");
+  background-size:cover;
+  background-repeat: no-repeat;
+  background-attachment:fixed;
+  background-size: 100%;
+  background-position: 100% 95%;
+  padding: -10px ; 
+  margin: 0px;
   font-size: 50px;
   font-weight: bold;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  position: absolute;
-  top: -2%;
-  left: -0.1%;
+  font-family: 'Verdana', 'Geneva', 'Tahoma', 'sans-serif';
+  text-align: center;
+  text-transform:uppercase;
   width: 100%;
-  height: 15%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); 
+  border-radius: 5px; 
+  position: absolute;
+  top: -2%; 
+  left: 50%; 
+  transform: translateX(-50%); 
+  box-sizing: border-box; 
 }
+
 
 #show-location {
   position: absolute;
@@ -70,10 +85,11 @@ h1 {
 
 #enemy-pokemon-name {
   position: absolute;
-  top: 54%;
-  left: 64%;
+  top: 16%;
+  left: 31.5%;
   font-family: "Pokemon Solid", sans-serif;
-  background-color: #bd4e6fa4;
+  background-color: #cf9e32d2;
+  border: 5px black ridge;
   font-size: 30px;
   text-transform: uppercase;
   border-radius: 10px;
@@ -84,28 +100,39 @@ h1 {
   padding-bottom: 1%;
 }
 
+#enemy-pokemon-name:hover {
+  background-color: #c78c0c;
+}
+
 #enemy-pokemon-img {
   position: absolute;
-  top: 55%;
-  left: 57%;
-  height: 500px;
-  width: 500px;
+  top: 30%;
+  left: 42.5%;
+  height: 300px;
+  width: 300px;
+  background-color: #cf9e32d2;
+  border-radius: 10px;
+  border: 5px black ridge;
+  
+}
+  
+#enemy-pokemon-img:hover {
+  background-color: #c78c0c;
 }
 #select-user-pokemon {
   position: absolute;
-  left: 38%;
-  top: 37%;
-  font-size: 20px;
+  left: 38.5%;
+  top: 70%;
+  font-size: 30px;
   text-transform: uppercase;
   border-radius: 10px;
-  letter-spacing: 10px;
   padding: 0.5%;
   padding-left: 1%;
   padding-right: 1%;
   padding-bottom: 1%;
-  font-family: "Pokemon Solid", sans-serif;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-weight: bold;
-  background-color: #5a8a5db7;
+  background-color: #5a8a5de1;
   border: 4px ridge black;;
 }
 
@@ -169,7 +196,7 @@ h3 {
   font-family: "Pokemon Solid", sans-serif;
   font-weight: bold;
   background-color: #5a8a5db7;
-  border: 4px ridge black;;
+  border: 4px ridge black;
 }
 
 #select-btn1:hover,
@@ -177,3 +204,290 @@ h3 {
 #select-btn3:hover{
   background-color: rgb(186, 72, 72);
 }
+
+#display-user {
+  position: fixed;
+  left: 20%;
+  bottom: -1%;
+}
+
+#display-enemy{
+  position: fixed;
+  left: 60%;
+  bottom: 0%
+}
+
+#user-fighter-img {
+  height: 400px;
+  width: 400px;
+}
+
+#user-fighter-text {
+  position: fixed;
+  top: 50%;
+  left: 23%;
+  font-family: "Pokemon Solid", sans-serif;
+  background-color: #af2a31d2;
+  font-size: 30px;
+  text-transform: uppercase;
+  border-radius: 10px;
+  letter-spacing: 10px;
+  padding: 0.5%;
+  padding-left: 1%;
+  padding-right: 1%;
+  padding-bottom: 1%;
+}
+
+#enemy-fighter-img {
+  height: 400px;
+  width: 400px;
+}
+  
+#enemy-fighter-text {
+  position: fixed;
+  top: 50%;
+  right: 23%;
+  font-family: "Pokemon Solid", sans-serif;
+  background-color: #af2a31d2;
+  font-size: 30px;
+  text-transform: uppercase;
+  border-radius: 10px;
+  letter-spacing: 10px;
+  padding: 0.5%;
+  padding-left: 1%;
+  padding-right: 1%;
+  padding-bottom: 1%;
+}
+
+#user-hp {
+    width: 120px;
+    height: 120px;
+    position: absolute;
+    top: 40%;
+    left: -70%;
+    margin: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    border: 5px ridge black;
+    background-color: #5a9b6fd2;
+    font-size: 30px;
+    text-transform: uppercase;
+    border-radius: 50%;
+    letter-spacing: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0; 
+}
+ 
+
+
+#enemy-hp {
+  width: 120px;
+  height: 120px;
+  position: absolute;
+  top: 40%;
+  right: -70%;
+  margin: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: bold;
+  border: 5px ridge black;
+  background-color: #c41717d2;
+  font-size: 30px;
+  text-transform: uppercase;
+  border-radius: 50%;
+  letter-spacing: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0; /* Remove padding as it's no longer needed */
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+#pkb1{
+  position: fixed;
+  width: 100px;
+  left: 57.5%;
+  top: 25%;
+  animation: spin 2s linear infinite;
+}
+
+#pkb2 {
+  position: fixed;
+  width: 100px;
+  left: 57.5%;
+  top: 43%;
+  animation: spin 2s linear infinite;
+}
+
+#pkb3 {
+  position: fixed;
+  width: 100px;
+  left: 57.5%;
+  top: 61%;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes flame-hover-animation {
+  0%, 100% {
+    background-position: 0% 0%, 100% 0%;
+  }
+  50% {
+    background-position: 100% 0%, 0% 0%;
+  }
+}
+
+@keyframes flame-active-animation {
+  0%, 100% {
+    background-position: 0% 0%, 100% 0%, 0% 100%, 100% 100%;
+  }
+  50% {
+    background-position: 100% 0%, 0% 0%, 100% 100%, 0% 100%;
+  }
+}
+
+#fight-btn {
+  padding: 15px 30px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 30px;
+  font-weight: 900;
+  text-transform: uppercase;
+  background-color: #e63946;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.2s;
+  outline: none; /* Remove outline for click focus */
+  position: relative; /* Required for absolute positioning of pseudo element */
+}
+
+#fight-btn:hover::after, #fight-btn:active::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: 8px;
+  background: linear-gradient(
+    60deg,
+    #ff6b6b, 
+    #ffffff00,
+    #ff6b6b,
+    #ffffff00
+  ),
+  linear-gradient(
+    120deg,
+    #ffe259, 
+    #ffffff00,
+    #ffe259,
+    #ffffff00
+  );
+  background-size: 200% 200%;
+}
+
+#fight-btn:hover::after {
+  animation: flame-hover-animation 1s infinite alternate;
+}
+
+#fight-btn:active::after {
+  animation: flame-active-animation 1s infinite alternate;
+}
+
+#fight-btn:hover {
+  background-color: #dc2f02; /* Darker shade for hover */
+}
+
+#fight-btn:active {
+  background-color: #6b0202; /* Even darker for active state */
+  color: #ffffff; /* Change text color to white when active */
+}
+
+#poke-logo {
+  position: fixed;
+  top: 6%;
+  right: 2%;
+  width: 500px;
+}
+#lose-gif {
+  border-radius: 30px; /* Rounded corners */
+  padding: 10px; /* Space between the GIF and the border */
+  background: #fff; /* A white background to create a 'matte' effect */
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2); /* Shadow for depth */
+  border: 5px solid #ecd018; /* A solid gold-like border */
+  display: inline-block; /* Allows the use of padding and maintains the element's shape */
+  position: absolute;
+  top: 28%;
+  left: 32%;
+  width: 600px;
+
+}
+#win-gif {
+  border-radius: 30px; /* Rounded corners */
+  padding: 10px; /* Space between the GIF and the border */
+  background: #fff; /* A white background to create a 'matte' effect */
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2); /* Shadow for depth */
+  border: 5px solid #ecd018; /* A solid gold-like border */
+  display: inline-block; /* Allows the use of padding and maintains the element's shape */
+  position: absolute;
+  top: 28%;
+  left: 32%;
+}
+
+#lose-msg,
+#win-msg {
+  position: fixed;
+  top: 45%;
+  right: 2%;
+  font-family: "Pokemon Solid", sans-serif;
+  background-color: #323897e7;
+  color: yellow;
+  font-size: 80px;
+  text-transform: uppercase;
+  border-radius: 10px;
+  letter-spacing: 7px;
+  padding: 0.5%;
+  padding-left: 1%;
+  padding-right: 1%;
+  padding-bottom: 1%;
+  border: 5px solid black
+}
+
+#back-btn {
+  position: fixed;
+  top: 55%;
+  left: 2%;
+  font-family: "Pokemon Solid", sans-serif;
+  background-color: #70d41ee7;
+  color: rgb(63, 63, 55);
+  font-size: 20px;
+  text-transform: uppercase;
+  border-radius: 10px;
+  letter-spacing: 7px;
+  padding: 0.5%;
+  padding-left: 1%;
+  padding-right: 1%;
+  padding-bottom: 1%;
+  border: 5px solid black
+}
+
+#back-btn:hover {
+  background-color: #516b3ce7;
+}
+
+
+
+
+
