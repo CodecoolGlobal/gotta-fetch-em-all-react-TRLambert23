@@ -1,13 +1,16 @@
-import { useEffect, useState } from "react";
-import SelectCharacter from "./SelectCharacter";
 
-function LoadEnemyPokemon({ url }) {
+  
+import { useEffect, useState } from "react";
+
+import SelectCharacter from "./SelectCaracter";
+
+
+function LoadEnemyPokemon({ url ,sendDataToApp}) {
   const [pokemon, setPokemon] = useState();
   const [selectButton, setSelectbutton] = useState(false);
-  const [isLocationEmpty, setIsLocationEmpty] = useState(false);
-
-  function handleClick() {
+  const handleClick = () => {
     setSelectbutton(true);
+    sendDataToApp(pokemon && pokemon)
   }
 
   useEffect(() => {
@@ -54,11 +57,13 @@ function LoadEnemyPokemon({ url }) {
           <img
             id="enemy-pokemon-img"
             src={pokemon && pokemon.sprites["front_default"]}
+
             alt={pokemon && pokemon.name}
           />
           <button onClick={handleClick}>Select your pokemon</button>
         </div>
       )}
+
     </>
   );
 }
