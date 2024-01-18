@@ -1,15 +1,21 @@
 
 import { useEffect, useState } from "react";
 import SelectCharacter from "./SelectCharacter";
-
+import HandleLocation from "./HandleLocations";
 
 function LoadEnemyPokemon({ url ,sendDataToApp}) {
   const [pokemon, setPokemon] = useState();
   const [selectButton, setSelectbutton] = useState(false);
   const[isLocationEmpty, setIsLocationEmpty] = useState(false)
+const [backClicked, setBackClicked] = useState(false)
+
   const handleClick = () => {
     setSelectbutton(true);
     sendDataToApp(pokemon && pokemon)
+  }
+
+  const handleBackClick = () =>{
+   setBackClicked(true)
   }
 
   useEffect(() => {
@@ -43,12 +49,13 @@ function LoadEnemyPokemon({ url ,sendDataToApp}) {
 
   return (
     <>
-      {selectButton ? (
+    {backClicked?(<HandleLocation/>):(
+      selectButton ? (
         <SelectCharacter />
       ) : isLocationEmpty ? (
         <div>
           <h2>This location does not seem to have any pokémon</h2>
-        <button>Back</button>
+        <button onClick={handleBackClick}>Back</button>
         </div>
       ) : (
         <div>
@@ -61,7 +68,9 @@ function LoadEnemyPokemon({ url ,sendDataToApp}) {
           />
           <button id="select-user-pokemon" onClick={handleClick}>Select your pokemon</button>
         </div>
-      )}
+      )
+    )}
+      
 
     </>
   );
