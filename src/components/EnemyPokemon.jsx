@@ -1,9 +1,12 @@
 import { useEffect, useState } from "react";
-
+import SelectCaracter from "../SelectCaracter";
 function LoadEnemyPokemon ({url}) {
 
     const [pokemon, setPokemon] = useState()
-
+    const [selectButton, setSelectbutton] = useState(false)
+    function handleClick(){
+      setSelectbutton(true)
+    }
     useEffect(() => {
   async function displayPokemon() { //THIS
     const data = await fetch(url);
@@ -25,11 +28,12 @@ function LoadEnemyPokemon ({url}) {
     }, [])
 
     return (
+        <>{selectButton?(<SelectCaracter/>):(<div>
+          <h3 id="enemy-pokemon-name">{pokemon && pokemon.name}</h3>
+          <img id="enemy-pokemon-img" src={pokemon && pokemon.sprites['front_default']}/>
+          <button onClick={handleClick}>Select your pokemon</button>
+      </div>)}</>
         
-        <div>
-            <h3 id="enemy-pokemon-name">{pokemon && pokemon.name}</h3>
-            <img id="enemy-pokemon-img" src={pokemon && pokemon.sprites['front_default']}/>
-        </div>
         )
 }
 
