@@ -27,7 +27,7 @@ function HandleLocation({OnPick}) {
               id={location.name.slice(0, 2)}
               key={location.url}
               onClick={() => {
-                OnPick(location.url)
+                OnPick(location)
               }} 
             >
               {location.name}

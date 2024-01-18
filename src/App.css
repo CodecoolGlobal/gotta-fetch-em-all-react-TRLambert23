@@ -1,9 +1,10 @@
 body {
   background-image: url("https://i.ibb.co/QPQR2jh/pokemon-arena-bg-edited.png");
-  background-size: cover;
+  background-size:cover;
+  background-repeat: no-repeat;
   background-attachment: fixed;
-  height: 110vh;
-  overflow: hidden;
+
+  overflow: hidden
 }
 
 #root {
@@ -104,6 +105,7 @@ h1 {
   font-family: "Pokemon Solid", sans-serif;
   font-weight: bold;
   background-color: #5a8a5db7;
+  border: 4px ridge black;;
 }
 
 #select-user-pokemon:hover {

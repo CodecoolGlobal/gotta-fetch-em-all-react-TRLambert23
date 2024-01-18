@@ -38,7 +38,7 @@ function SelectCharacter({ sendDataToApp }) {
           {pokemon1 && pokemon1.name}
         </h3>
         <img
-          id="enemy-pokemon-img"
+          id="user-pokemon-img1"
           src={pokemon1 && pokemon1.sprites["front_default"]}
           alt={pokemon1 && pokemon1.name}
         />
@@ -49,7 +49,7 @@ function SelectCharacter({ sendDataToApp }) {
           {pokemon2 && pokemon2.name}
         </h3>
         <img
-          id="enemy-pokemon-img"
+          id="user-pokemon-img2"
           src={pokemon2 && pokemon2.sprites["front_default"]}
           alt={pokemon2 && pokemon2.name}
         />
@@ -60,7 +60,7 @@ function SelectCharacter({ sendDataToApp }) {
           {pokemon3 && pokemon3.name}
         </h3>
         <img
-          id="enemy-pokemon-img"
+          id="user-pokemon-img3"
           src={pokemon3 && pokemon3.sprites["front_default"]}
           alt={pokemon3 && pokemon3.name}
         />

@@ -1,6 +1,6 @@
-function Header () {
+function Header ({ title }) {
     return (
-        <p>Select Location</p>
+        <p>{title}</p>
     )
 }
 
