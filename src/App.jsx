@@ -13,12 +13,11 @@ function toggleLocation (url) {
 }
 
   return (
-    <>
+    
+    <body>
       <h1><Header/></h1>
-      
-      {chosenLocation ? <LoadEnemyPokemon url={chosenLocation}/> : <HandleLocations OnPick={toggleLocation} />}
-      
-    </>
+      {chosenLocation ? <LoadEnemyPokemon url={chosenLocation}/> : <HandleLocations OnPick={toggleLocation}/>}
+    </body>
   ) 
 }
 
