@@ -27,6 +27,7 @@ ol {
   top: 16%;
   left: 40%;
   background-color: #b99f27a4;
+  border-radius: 10px;
 }
 
 li {
@@ -110,4 +111,69 @@ h1 {
 
 #select-user-pokemon:hover {
   background-color: #5cd063b7;
+}
+
+#user-pokemons-container {
+  position: absolute;
+  top: 20%;
+  left: 38%;
+  padding: 0%;
+  background-color: #b99f27c9;
+  border-radius: 10px;
+  border: #403a1a 4px solid;
+  width: 500px;
+}
+
+#pokemon1,
+#pokemon2,
+#pokemon3 {
+  padding: 5px;
+  border: #484141 5px solid;
+  font-size: 20px;
+}
+
+h3 {
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  text-transform:uppercase;
+}
+#user-pokemon-img1 {
+  position: absolute;
+  left: -11%;
+  top: -11%;
+  width: 300px;
+}
+#user-pokemon-img2 {
+  position: absolute;
+  left: 3%;
+  top: 35%;
+  width: 150px;
+}
+#user-pokemon-img3 {
+  position: absolute;
+  top: 60%;
+  left: -7%;
+  width: 245px;
+}
+#select-btn1,
+#select-btn2, 
+#select-btn3{
+  position: relative;
+  font-size: 20px;
+  text-transform: uppercase;
+  border-radius: 10px;
+  letter-spacing: 10px;
+  padding: 0.5%;
+  padding-left: 1%;
+  padding-right: 1%;
+  padding-bottom: 1%;
+  font-family: "Pokemon Solid", sans-serif;
+  font-weight: bold;
+  background-color: #5a8a5db7;
+  border: 4px ridge black;;
+}
+
+#select-btn1:hover,
+#select-btn2:hover, 
+#select-btn3:hover{
+  background-color: rgb(186, 72, 72);
 }
