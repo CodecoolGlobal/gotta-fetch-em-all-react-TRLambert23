@@ -231,7 +231,7 @@ h3 {
   top: 50%;
   left: 23%;
   font-family: "Pokemon Solid", sans-serif;
-  background-color: #af2a31d2;
+  background-image: linear-gradient(to right, yellow, red);
   font-size: 30px;
   text-transform: uppercase;
   border-radius: 10px;
@@ -240,6 +240,7 @@ h3 {
   padding-left: 1%;
   padding-right: 1%;
   padding-bottom: 1%;
+  opacity: 0.8;
 }
 
 #enemy-fighter-img {
@@ -252,7 +253,7 @@ h3 {
   top: 50%;
   right: 23%;
   font-family: "Pokemon Solid", sans-serif;
-  background-color: #af2a31d2;
+  background-image: linear-gradient(to right, yellow, red);
   font-size: 30px;
   text-transform: uppercase;
   border-radius: 10px;
@@ -261,6 +262,7 @@ h3 {
   padding-left: 1%;
   padding-right: 1%;
   padding-bottom: 1%;
+  opacity: 0.8;
 }
 
 #user-hp {
